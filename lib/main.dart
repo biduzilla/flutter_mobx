@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mobxFlutter/screens/checkout.dart';
 import 'package:mobxFlutter/screens/home.dart';
+import 'package:mobxFlutter/store/carrinho_store.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(MyApp());
@@ -18,7 +20,10 @@ class MyApp extends StatelessWidget {
             seedColor: Color.fromARGB(255, 255, 83, 83),
           ),
           useMaterial3: true),
-      home: Home(),
+      home: Provider(
+        create: (_) => CarrinhoStore(),
+        child: Home(),
+      ),
     );
   }
 }

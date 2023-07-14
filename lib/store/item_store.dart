@@ -14,7 +14,7 @@ abstract class ItemStoreBase with Store {
 
   @action
   void removeItem() {
-    if (valorCount < 0) {
+    if (valorCount > 0) {
       valorCount--;
     }
   }
