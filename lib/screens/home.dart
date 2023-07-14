@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mobx/components/categoria_text.dart';
-import 'package:mobx/components/item_list.dart';
-import 'package:mobx/components/search_input.dart';
+import 'package:mobxFlutter/components/categoria_text.dart';
+import 'package:mobxFlutter/components/item_list.dart';
+import 'package:mobxFlutter/components/search_input.dart';
 
 class Home extends StatelessWidget {
   Home({super.key});

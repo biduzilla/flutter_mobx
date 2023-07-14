@@ -1,9 +1,9 @@
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter/widgets.dart';
-import 'package:mobx/cardapio.dart';
-import 'package:mobx/components/cartao.dart';
-import 'package:mobx/model/item.dart';
+import 'package:mobxFlutter/cardapio.dart';
+import 'package:mobxFlutter/components/cartao.dart';
+import 'package:mobxFlutter/model/item.dart';
 
 class ItemList extends StatelessWidget {
   const ItemList({super.key, required this.categoria});

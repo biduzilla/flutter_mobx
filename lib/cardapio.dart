@@ -1,4 +1,4 @@
-import 'package:mobx/model/item.dart';
+import 'package:mobxFlutter/model/item.dart';
 
 const String _imageInitialPath = "assets/images";
 const List<Item> todosOsItems = <Item>[
