@@ -3,6 +3,7 @@ import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:mobxFlutter/components/categoria_text.dart';
 import 'package:mobxFlutter/components/item_list.dart';
 import 'package:mobxFlutter/components/search_input.dart';
+import 'package:mobxFlutter/screens/checkout.dart';
 import 'package:mobxFlutter/store/carrinho_store.dart';
 import 'package:provider/provider.dart';
 
@@ -14,6 +15,7 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final carrinhoStore = Provider.of<CarrinhoStore>(context, listen: false);
+    final BuildContext homeContext = context;
 
     return SafeArea(
       child: Scaffold(
@@ -46,7 +48,14 @@ class Home extends StatelessWidget {
                 child: Observer(
                     builder: (_) => !carrinhoStore.isListVazia
                         ? InkWell(
-                            onTap: () {},
+                            onTap: () {
+                              Navigator.push(context,
+                                  MaterialPageRoute(builder: (context) {
+                                return Checkout(
+                                  homeContext: homeContext,
+                                );
+                              }));
+                            },
                             child: Ink(
                               width: double.infinity,
                               height: 80,
@@ -98,7 +107,7 @@ class Home extends StatelessWidget {
                                   Align(
                                     alignment: Alignment.centerRight,
                                     child: Text(
-                                      "R\$ 00,00",
+                                      "R\$ ${carrinhoStore.totalCompra.toStringAsFixed(2)}",
                                       style: TextStyle(
                                           fontSize: 16,
                                           color: Theme.of(context)

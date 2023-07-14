@@ -40,6 +40,22 @@ mixin _$CarrinhoStore on CarrinhoStoreBase, Store {
     });
   }
 
+  late final _$totalCompraAtom =
+      Atom(name: 'CarrinhoStoreBase.totalCompra', context: context);
+
+  @override
+  double get totalCompra {
+    _$totalCompraAtom.reportRead();
+    return super.totalCompra;
+  }
+
+  @override
+  set totalCompra(double value) {
+    _$totalCompraAtom.reportWrite(value, super.totalCompra, () {
+      super.totalCompra = value;
+    });
+  }
+
   late final _$CarrinhoStoreBaseActionController =
       ActionController(name: 'CarrinhoStoreBase', context: context);
 
@@ -66,9 +82,21 @@ mixin _$CarrinhoStore on CarrinhoStoreBase, Store {
   }
 
   @override
+  void atualizaTotalCompra() {
+    final _$actionInfo = _$CarrinhoStoreBaseActionController.startAction(
+        name: 'CarrinhoStoreBase.atualizaTotalCompra');
+    try {
+      return super.atualizaTotalCompra();
+    } finally {
+      _$CarrinhoStoreBaseActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
   String toString() {
     return '''
 listaItens: ${listaItens},
+totalCompra: ${totalCompra},
 qtdItens: ${qtdItens},
 isListVazia: ${isListVazia}
     ''';

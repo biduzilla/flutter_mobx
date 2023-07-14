@@ -8,6 +8,9 @@ abstract class CarrinhoStoreBase with Store {
   @observable
   List<Item> listaItens = ObservableList<Item>();
 
+  @observable
+  double totalCompra = 0;
+
   @computed
   int get qtdItens => listaItens.length;
 
@@ -17,10 +20,20 @@ abstract class CarrinhoStoreBase with Store {
   @action
   void addCarrinho(Item item) {
     listaItens.add(item);
+    atualizaTotalCompra();
   }
 
   @action
   void removeCarrinho(Item item) {
     listaItens.remove(item);
+    atualizaTotalCompra();
+  }
+
+  @action
+  void atualizaTotalCompra() {
+    totalCompra = 0;
+    listaItens.forEach((element) {
+      totalCompra += element.preco;
+    });
   }
 }
