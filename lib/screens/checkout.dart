@@ -16,6 +16,11 @@ class Checkout extends StatelessWidget {
         Provider.of<CarrinhoStore>(homeContext, listen: false);
     return SafeArea(
       child: Scaffold(
+        appBar: AppBar(
+          leading: IconButton(
+              onPressed: () => Navigator.of(context).pop(),
+              icon: Icon(Icons.arrow_back)),
+        ),
         body: Padding(
           padding: const EdgeInsets.all(16.0),
           child: CustomScrollView(
