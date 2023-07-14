@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:mobxFlutter/components/order_item.dart';
 import 'package:mobxFlutter/components/payment_method.dart';
 import 'package:mobxFlutter/components/payment_total.dart';

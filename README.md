@@ -1,16 +1,15 @@
-# mobx
+# Projeto Gerenciador de Pedidos
 
-A new Flutter project.
+# Sobre o Projeto
+Projeto criado para melhorar os conhecimentos de gerenciamento de estado no Flutter usando MobX.
 
-## Getting Started
+# Layout Mobile
+## HomePage
+![Mobile 1](/imgs/flutter_01.png)
 
-This project is a starting point for a Flutter application.
+## Pedidos Adicionados
+![Mobile 1](/imgs/flutter_02.png)
 
-A few resources to get you started if this is your first Flutter project:
+## Checkout Page
+![Mobile 1](imgs/flutter_03.png)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
